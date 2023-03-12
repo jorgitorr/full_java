@@ -10,7 +10,7 @@ import java.util.Comparator;
  *
  * @author alumno
  */
-public class TrackCompare implements Comparator<Track>{
+public class TrackComparator implements Comparator<Track>{
 
     @Override
     public int compare(Track t, Track t1) {

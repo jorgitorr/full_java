@@ -45,10 +45,5 @@ public class Artist {
         
         return equals;
     }
-
-    /*public static void main(String[] args) {
-        Artist a = new Artist("Paco");
-        System.out.println(a);
-    }*/
     
 }

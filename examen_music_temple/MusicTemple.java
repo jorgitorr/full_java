@@ -6,7 +6,7 @@ package examen_music_temple;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -30,30 +30,6 @@ public class MusicTemple {
         return tracks;
     }
     
-    /**
-     * method that check if the list is empthy
-     * @param tracks
-     * @return list or null
-     */
-    private List<Track>checkIfEmpthy(List<Track>tracks){
-        if(tracks.isEmpty())
-            tracks = null;
-        
-        return tracks;
-    }
-    
-    /**
-     * another method for check if the list is empty
-     * @param tracks
-     * @return true or false
-     */
-    private boolean checkIfEmptyBoolean(List<Track>tracks){
-        boolean empty = true;
-        if(tracks.isEmpty())
-            empty = false;
-        
-        return empty;
-    }
     
     List<Track>getByArtist(Artist artist){
         List<Track>getByArtist = null;
@@ -70,14 +46,13 @@ public class MusicTemple {
     
     
     List<Track>getBySong(String keyword){
-        List<Track>getBySong = new ArrayList<>();
-        for(Track t:tracks)
-            if(t.getSongName().contains(keyword))
-                getBySong.add(t);
-        
-        
-        checkIfEmpthy(tracks);
-        
+        List<Track>getBySong =null;
+        if(!tracks.isEmpty()){
+            getBySong = new ArrayList<>();
+            for(Track t:tracks)
+                if(t.getSongName().contains(keyword))
+                    getBySong.add(t);
+        }
         return getBySong;
     }
     
@@ -91,11 +66,11 @@ public class MusicTemple {
      */
     private Track topSong(){
         Track topSong = null;
-        if(checkIfEmptyBoolean(tracks)){
-            Collections.sort(tracks,new TrackCompare());
-            topSong = tracks.get(0);
+        if(!tracks.isEmpty()){
+            List<Track>orderedTracks = getOrderedTracks();
+            topSong = orderedTracks.get(0);
         }
-        
+
         return topSong;
     }
     
@@ -116,23 +91,19 @@ public class MusicTemple {
     }
     
     private List<Track>getOrderedTracks(){
-        List<Track>orderedList = null;
-        if(!tracks.isEmpty()){
-            orderedList = new ArrayList<>();
-            
-        }
-        return orderedList;
-        
+        List<Track>orderedTrackList = new LinkedList<>(tracks);
+        Collections.sort(orderedTrackList, new TrackComparator());
+        return orderedTrackList;
     }
     
     private List<Track>playList(int totalMaxTime){
         List<Track>playList = null;
-        Collections.sort(tracks,new TrackCompare());
+        Collections.sort(tracks,new TrackComparator());
         if(!tracks.isEmpty()){
-            //List<Track>orderedTrackList = getOrderedTracks();
+            List<Track>orderedTrackList = getOrderedTracks();
             int sumTime = 0;
             playList = new ArrayList<>();
-            for(Track track:tracks){
+            for(Track track:orderedTrackList){
                 sumTime += track.getSongLength();
                 if(sumTime<totalMaxTime)
                     playList.add(track);
@@ -140,9 +111,7 @@ public class MusicTemple {
                     sumTime -= track.getSongLength();
             }
         }
-        
         return playList;
-        
     }
     
     public static void main(String[] args) {

@@ -4,6 +4,8 @@
  */
 package examen_music_temple;
 
+import java.util.Objects;
+
 /**
  *
  * @author alumno
@@ -56,4 +58,24 @@ public class Track {
     public String toStringFull(){
         return "song=" + songName + " " + " - artist=" + artist + " - " + songLength + "sg";
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        boolean equal = false;
+        
+        Track t = (Track)obj;
+        
+        if(this.getSongName().equals(t))
+            equal = true;
+        
+        return equal;
+    }
+    
+    
 }
