@@ -1,0 +1,17 @@
+Carlos;20:11:2002
+Paco;Consejo; 10:03:1998
+Maria;Recuerdo; 05:10:1998
+Angela; Recuerdo;Documento SA; 10:09:2008
+David; Dominico;Documento BA; 05:10:2016
+Paco; Rolling; Federacion Galactica; 09:12:2017
+Veronica; Geronik;Federation;08:06:2013
+Mateo;Fuller;10:11:2012
+FIN USUARIOS
+Carlos;Maria:Mateo:Carlos
+Paco; Maria:Angela:Veronica
+Maria; Paco:Angela:Mateo
+Angela; Veronica:Maria:David
+David; Mateo:Angela:Paco
+Paco; Angela:Veronica:Mateo
+Mateo;Carlos:Angela:David:Paco
+FIN AMISTADES

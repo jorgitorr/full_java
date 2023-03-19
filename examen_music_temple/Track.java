@@ -71,10 +71,8 @@ public class Track {
         
         Track t = (Track)obj;
         
-        if(this.getSongName().equals(t))
-            equal = true;
-        
-        return equal;
+        return this.songName.equals(t.songName);
+
     }
     
     

@@ -163,7 +163,7 @@ public class MusicTemple {
         System.out.println("*****Listing songs by artist: " + shakira);
         
         artistSongs = music.artistSongs();
-        music.getByArtist(shakira);
+        System.out.println(music.getByArtist(shakira));
         
         System.out.println("");
         System.out.println("*****Listing songs that include: Bzrp");
