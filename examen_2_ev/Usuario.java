@@ -1,54 +1,55 @@
+
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Set;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package examen_2_ev;
-
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
 
 /**
  *
- * @author jorge
+ * @author alumno
  */
 public class Usuario {
-    private String nombre;
-    private List<Grupo>grupos;
-    private Fecha fecha;
+    private String nombreUsuario;
+    private String nombreReal;
+    private Fecha registro;
     private Set<Usuario>amigos;
+    private Set<Grupo>grupos;
 
-    public Usuario(String nombre, List<Grupo>grupos, Fecha fecha) {
-        this.nombre = nombre;
-        this.fecha = fecha;
-        this.grupos = grupos;
+
+    public Usuario(String nombreUsuario, String nombreReal) {
+        this.nombreUsuario = nombreUsuario;
+        this.nombreReal = nombreReal;
+        this.registro = new Fecha(1,11,2000);
         this.amigos = new HashSet<>();
+        this.grupos = new HashSet<>();
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreUsuario() {
+        return nombreUsuario;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
     }
 
-    public List<Grupo> getGrupos() {
-        return grupos;
+    public String getNombreReal() {
+        return nombreReal;
     }
 
-    public void setGrupos(List<Grupo> grupos) {
-        this.grupos = grupos;
+    public void setNombreReal(String nombreReal) {
+        this.nombreReal = nombreReal;
     }
 
-    public Fecha getFecha() {
-        return fecha;
+    public Fecha getRegistro() {
+        return registro;
     }
 
-    public void setFecha(Fecha fecha) {
-        this.fecha = fecha;
+    public void setRegistro(Fecha registro) {
+        this.registro = registro;
     }
 
     public Set<Usuario> getAmigos() {
@@ -58,14 +59,38 @@ public class Usuario {
     public void setAmigos(Set<Usuario> amigos) {
         this.amigos = amigos;
     }
-    
-    public void addAmigo(Usuario usuario){
-        if(usuario.getNombre()!=this.getNombre()){
-            if(!amigos.equals(usuario))
-                amigos.add(usuario);
-        }
+
+    public Set<Grupo> getGrupos() {
+        return grupos;
+    }
+
+    public void setGrupos(Set<Grupo> grupos) {
+        this.grupos = grupos;
     }
     
+    
+    
+    public void actualizarGrupo(Grupo grupo){
+        grupos.add(grupo);
+    }
+    
+    public void agregarAmigo(Usuario amigo){
+        if(amigos == null)
+            amigos = new HashSet<>();
+        amigos.add(amigo);
+    }
+
+    @Override
+    public String toString() {
+        return nombreUsuario + " (" +nombreReal + ')';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        return hash;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -78,7 +103,14 @@ public class Usuario {
             return false;
         }
         final Usuario other = (Usuario) obj;
-        return Objects.equals(this.amigos, other.amigos);
+        if (!Objects.equals(this.nombreUsuario, other.nombreUsuario)) {
+            return false;
+        }
+        if (!Objects.equals(this.nombreReal, other.nombreReal)) {
+            return false;
+        }
+        return Objects.equals(this.registro, other.registro);
     }
+
     
 }
