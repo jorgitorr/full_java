@@ -37,9 +37,10 @@ public class AuxiliarAmigos {
         return amigosComun.size();
     }
     /**
-     * volver a hacer
+     * método que devuelve el amigo del amigo del usuario pasado por parámetros que
+     * más se repite
      * @param usuario
-     * @return 
+     * @return usuario que más se repite
      */
     public static Usuario sugerirAmigoA(Usuario usuario){
         Set<Usuario>amigos = usuario.getAmigos();

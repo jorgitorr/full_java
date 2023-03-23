@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 public class RedSocial {
@@ -66,8 +67,8 @@ public class RedSocial {
             if(lineas.equals("FIN AMISTADES"))
                 break;
             
-            datos = lineas.split(":");
-            amigos = datos[1].split(";");
+            datos = lineas.split(":");//lee el usuario con todos sus amigos
+            amigos = datos[1].split(";");//separa sus amigos
             
             for(Usuario user:usuarios){
                 if(user.getNombreUsuario().equals(datos[0])){
@@ -123,8 +124,7 @@ public class RedSocial {
      * usuario.
      */
     private Map<Grupo,Set<Usuario>> usuariosGrupos(){
-        Map<Grupo, Set<Usuario>>grupoUsuarios = new HashMap<>();
-        
+        Map<Grupo, Set<Usuario>>grupoUsuarios = new TreeMap<>(new ComparadorGrupos());
         
         for(Usuario usuario: usuarios){
             for(Grupo grupo: usuario.getGrupos()){
