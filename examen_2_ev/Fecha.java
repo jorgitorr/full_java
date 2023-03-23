@@ -1,3 +1,5 @@
+package examen_2_ev;
+
 public class Fecha implements Comparable<Fecha>{
     private int dia;
     private int mes;

@@ -1,4 +1,4 @@
-
+package examen_2_ev;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -67,19 +67,16 @@ public class Usuario {
     public void setGrupos(Set<Grupo> grupos) {
         this.grupos = grupos;
     }
-    
-    
-    
+
     public void actualizarGrupo(Grupo grupo){
-        grupos.add(grupo);
+        if(!grupos.contains(grupo))
+            grupos.add(grupo);
     }
     
     public void agregarAmigo(Usuario amigo){
-        if(amigos == null)
-            amigos = new HashSet<>();
         amigos.add(amigo);
     }
-
+    
     @Override
     public String toString() {
         return nombreUsuario + " (" +nombreReal + ')';
