@@ -1,4 +1,4 @@
-package examen_2_ev;
+
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -23,7 +23,12 @@ public class Usuario {
     public Usuario(String nombreUsuario, String nombreReal) {
         this.nombreUsuario = nombreUsuario;
         this.nombreReal = nombreReal;
-        this.registro = new Fecha(1,11,2000);
+        this.amigos = new HashSet<>();
+        this.grupos = new HashSet<>();
+    }
+
+    public Usuario(String nombreUsuario) {
+        this(nombreUsuario,"");
         this.amigos = new HashSet<>();
         this.grupos = new HashSet<>();
     }
@@ -67,15 +72,19 @@ public class Usuario {
     public void setGrupos(Set<Grupo> grupos) {
         this.grupos = grupos;
     }
-
+    
+    
+    
     public void actualizarGrupo(Grupo grupo){
         grupos.add(grupo);
     }
     
     public void agregarAmigo(Usuario amigo){
+        if(amigos == null)
+            amigos = new HashSet<>();
         amigos.add(amigo);
     }
-    
+
     @Override
     public String toString() {
         return nombreUsuario + " (" +nombreReal + ')';
@@ -99,10 +108,12 @@ public class Usuario {
             return false;
         }
         final Usuario other = (Usuario) obj;
-        if (!Objects.equals(this.nombreUsuario, other.nombreUsuario)) 
+        if (!Objects.equals(this.nombreUsuario, other.nombreUsuario)) {
             return false;
-        if (!Objects.equals(this.nombreReal, other.nombreReal)) 
+        }
+        if (!Objects.equals(this.nombreReal, other.nombreReal)) {
             return false;
+        }
         return Objects.equals(this.registro, other.registro);
     }
 

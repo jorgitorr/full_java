@@ -53,9 +53,8 @@ public class RedSocial {
             
             for(int i=2; i<datos.length-3;i++){
                 Grupo grupo = new Grupo(datos[i]);
-                //comprueba si son iguales los grupos en el equals de Grupo
-                if(!grupos.contains(grupo))
-                    grupos.add(grupo);//agrega grupo a grupos
+
+                grupos.add(grupo);//agrega grupo a grupos
                 
                 user.actualizarGrupo(grupo);//guarda en el usuario el grupo
             }
@@ -71,10 +70,10 @@ public class RedSocial {
             amigos = datos[1].split(";");//separa sus amigos
             
             for(Usuario user:usuarios){
-                if(user.getNombreUsuario().equals(datos[0])){
+                if(user.getNombreUsuario.equals(datos[0])){
                     for(String nombreAmigo: amigos){
                         for(Usuario amigo:usuarios){
-                            if(amigo.getNombreUsuario().equals(nombreAmigo)){
+                            if(amigo.getNombreUsuario.equals(nombreAmigo)){
                                 user.agregarAmigo(amigo);
                             }
                         }
@@ -167,7 +166,7 @@ public class RedSocial {
         /*
         métodos estáticos solo pueden acceder a atributos estáticos
         */
-        AuxiliarAmigos.masAmigos(usuarios);
+        /*AuxiliarAmigos.masAmigos(usuarios);
         System.out.println("amigos en común entre Lucia y Nico: " + 
                 AuxiliarAmigos.cantidadAmigoEnComun(lucia,nico));
         System.out.println("Amigos en común entre Sara y Nico: " + 
@@ -189,7 +188,7 @@ public class RedSocial {
                 System.out.print(usuario + " ");
             }
             System.out.println();
-        }
+        }*/
         
     }
 }

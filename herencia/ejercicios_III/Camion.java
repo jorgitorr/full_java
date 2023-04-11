@@ -13,7 +13,7 @@ public class Camion extends VehiculoCarga{
     @Override
     public double alquiler() {
         Furgoneta alquilerFurgoneta = new Furgoneta(getMatricula(), getDuracion(), getTara());
-        double alquiler = alquilerFurgoneta.alquiler();
+        double alquiler = alquilerFurgoneta.alquiler()+40;
         return alquiler;
     }
 

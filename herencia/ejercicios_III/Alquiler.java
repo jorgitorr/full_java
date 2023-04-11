@@ -60,8 +60,8 @@ public class Alquiler implements Exportable{
 
     public double importeTotal(){
         double total = 0;
-        for(int i=0; i<pedido.length-1; i++)
-            total += pedido[i].alquiler();
+        for(Vehiculo vehiculo: pedido)
+            total += vehiculo.alquiler();
 
         return total;
     }
