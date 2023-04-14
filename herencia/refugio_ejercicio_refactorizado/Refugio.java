@@ -14,25 +14,36 @@ public class Refugio {
     private List<Animal>historial;
     private static int numeroRegistro;
 
-
-
     public Refugio(String nombre) {
-        numeroRegistro = 0;
+        numeroRegistro++;
         this.nombre = nombre;
         this.perros = new LinkedList<>();
         this.gatos = new LinkedList<>();
         this.historial = new LinkedList<>();
     }
 
+    public static int getNumeroRegistro() {
+        return numeroRegistro;
+    }
 
+    /**
+     * Se le ponen las vacunas a un animal y entra en el refugio y en el historial
+     * @param a
+     */
     public void entraAnimal(Animal a){
+        vacunacionInicial(a);
+        historial.add(a);
         if(a instanceof Perro)
             perros.add((Perro) a);
         else if(a instanceof Gato)
             gatos.add((Gato) a);
+        
     }
 
-    /*ya que el encargado de poner las vacunas es el refugio */
+    /**
+     * Pone las todas las vacunas esenciales al animal 
+     * @param a Animal 
+     */
     private void vacunacionInicial(Animal a){
         Dosis d = null;
         if(a instanceof Gato){
@@ -52,6 +63,11 @@ public class Refugio {
         }
     }
 
+    /**
+     * Administra una vacuna específica a un animal específico
+     * @param v Vacuna que se le administra
+     * @param a Animal
+     */
     public void suministraVacunaEspecifica(Vacuna v, Animal a){
         Dosis d = null;
         
@@ -64,8 +80,21 @@ public class Refugio {
         }
     }
 
+    /**
+     * Adopta el más viejo de los animales
+     * @return Animal más viejo
+     */
     public Animal adoptar(){
-        
+        Animal a = getAnimalAntiguo();
+
+        if(a instanceof Perro){
+            if(perros.contains(a))
+                perros.remove(a);
+        }else if(a instanceof Gato){
+            if(gatos.contains(a))
+                gatos.remove(a);
+        }
+        return a;
     }
 
     public Perro adoptaPerro(){
@@ -77,15 +106,25 @@ public class Refugio {
         return gatos.poll();
     }
 
-    
-
     @Override
     public String toString() {
         return nombre;
     }
 
+    /**
+     * coge el animal más antiguo
+     * Primero coge el gato más antiguo y si no hay gato coge el perro más antiguo
+     * @return
+     */
     public Animal getAnimalAntiguo(){
-        
+        Animal a = null;
+
+        if(!gatos.isEmpty())
+            a = gatos.peek();
+        else if(!perros.isEmpty())
+            a = perros.peek();
+
+        return a;
     }
 
     public Perro getPerroAntiguo(){
@@ -98,9 +137,8 @@ public class Refugio {
 
 
     public void adoptaTodos(){
-        while(getAnimalAntiguo()!=null){
+        while(perros.size()>0 || gatos.size()>0)
             System.out.println("adopta: " + adoptar());
-        }
     }
 
     
@@ -116,8 +154,16 @@ public class Refugio {
         return nombre;
     }
 
-    public List<Animal> getHistorial() {
-        return historial;
+    public void getHistorial() {
+        for(Animal a : historial){
+            System.out.print(a);
+            if(a.equals(historial.get(historial.size()-1))){
+                System.out.print(".");
+            }else
+                System.out.print(", ");
+        }
+
+        System.out.println();
     }
 
 

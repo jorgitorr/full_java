@@ -1,8 +1,5 @@
 package examen_2_ev;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -70,14 +67,15 @@ public class RedSocial {
             amigos = datos[1].split(";");//separa sus amigos
             
             for(Usuario user:usuarios){
-                if(user.getNombreUsuario.equals(datos[0])){
+                if(user.getNombreUsuario().equals(datos[0])){
                     for(String nombreAmigo: amigos){
                         for(Usuario amigo:usuarios){
-                            if(amigo.getNombreUsuario.equals(nombreAmigo)){
+                            if(amigo.getNombreUsuario().equals(nombreAmigo)){
                                 user.agregarAmigo(amigo);
                             }
                         }
                     }
+                    break;
                 }
             }
             

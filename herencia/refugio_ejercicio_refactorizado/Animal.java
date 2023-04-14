@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
-public abstract class Animal {
+public abstract class Animal{
     private String nombre;
     private char sexo;//m o h
     private LocalDateTime fecha;
@@ -30,7 +30,6 @@ public abstract class Animal {
     public LocalDateTime getFecha() {
         return fecha;
     }
-
 
     @Override
     public String toString() {

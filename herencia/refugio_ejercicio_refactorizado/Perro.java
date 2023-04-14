@@ -1,5 +1,6 @@
 package refugio_ejercicio_refactorizado;
 
+import java.time.LocalDateTime;
 
 public class Perro extends Animal{
 
@@ -13,5 +14,11 @@ public class Perro extends Animal{
         return "Perro: " + super.toString();
     }
 
+    @Override
+    public LocalDateTime getFecha() {
+        return super.getFecha();
+    }
+
+    
 
 }

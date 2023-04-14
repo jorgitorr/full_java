@@ -3,8 +3,10 @@ package refugio_ejercicio_refactorizado;
 
 public class PruebaRefugio {
     public static void main(String[] args) {
+        //crea refugio con nombre indicado
         Refugio protectora = new Refugio("Protectora Mejores Amigos");
 
+        //entran animales en el refugio
         protectora.entraAnimal(new Gato("Juana",'h'));
         protectora.entraAnimal(new Perro("Marco",'m'));
         protectora.entraAnimal(new Perro("Lassie",'h'));
@@ -14,7 +16,7 @@ public class PruebaRefugio {
         protectora.entraAnimal(new Perro("Snoopy",'m'));
         protectora.entraAnimal(new Gato("Felix",'m'));
 
-        //si no es el animal que pido me va a sacar los animales  meterlos en la cola de nuevo
+        //adopta animales
         System.out.println("Se adopta: " + protectora.adoptaGato());
         System.out.println("Se adopta: " + protectora.adoptaGato());
         System.out.println("Se adopta: " + protectora.adoptaGato());
@@ -26,40 +28,51 @@ public class PruebaRefugio {
         Animal gardfield = new Gato("Gardfield",'m');
         protectora.entraAnimal(gardfield);
 
-        System.out.println(protectora);
-        System.out.println("El animal mas antiguo: " + protectora.getAnimalAntiguo());
+        System.out.println("El animal mas antiguo de " + protectora + " es: " + protectora.getAnimalAntiguo());
 
+        //deja pasar tiempo
         try{
             Thread.sleep(300);
         }catch(InterruptedException ex){
             System.out.println("Error");
         }
 
-        System.out.println(gardfield.getVacunas());
+        //dosis de gardfield
+        System.out.println("****Dosis " + gardfield.getNombre() + " ******");
+        for(Dosis d: gardfield.getVacunas()){
+            System.out.println(d);
+        }
+        System.out.println("**********************************");
 
+
+        //suministra vacunas específicas de coronavirus a los dos animales
         protectora.suministraVacunaEspecifica(VacunaPerro.CCORONAVIRUS, pluto);
         protectora.suministraVacunaEspecifica(VacunaGato.FCORONAVIRUS, gardfield);
 
+
+        //dosis de pluto
         System.out.println("****Dosis " + pluto.getNombre() + " ******");
-        //imprime todas las dosis de vacunas de pluto
         for(Dosis d: pluto.getVacunas()){
             System.out.println(d);
         }
+        System.out.println("**********************************");
 
-
-        System.out.println("/n/nAdopta todos los animales");
-
+        //adopta todos los animales
+        System.out.println("******Adopta todos los animales*******");
 
         protectora.adoptaTodos();
-        
+
+        System.out.println("**************************************");
+
+
+        //ordena historial
         protectora.ordenarHistorialEspecie();
-        System.out.println(protectora.getHistorial());
+        System.out.println("Historial ordenado por especie: ");
+        protectora.getHistorial();
+
         protectora.ordenarHistorialFecha();
-        System.out.println(protectora.getHistorial());
+        System.out.println("Historial ordenado por fecha: " );
+        protectora.getHistorial();
 
     }
-
-
-
-
 }

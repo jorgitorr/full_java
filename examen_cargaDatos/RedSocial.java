@@ -51,28 +51,7 @@ public class RedSocial {
             int mes = Integer.parseInt(partes[partes.length-2]);
             int anio = Integer.parseInt(partes[partes.length-3]);
             Fecha fecha = new Fecha(dia,mes,anio);
-            /*if(partes.length>5){
-                int lenght = partes.length;
-                switch(lenght){
-                    case 6:
-                        Grupo grupo1 = new Grupo(partes[3]);
-                        grupos.add(grupo1);
-                    case 7:
-                        Grupo grupo2 = new Grupo(partes[3]);
-                        Grupo grupo3 = new Grupo(partes[4]);
-                        grupos.add(grupo2);
-                        grupos.add(grupo3);
-                    case 8:
-                        Grupo grupo4 = new Grupo(partes[3]);
-                        Grupo grupo5 = new Grupo(partes[4]);
-                        Grupo grupo6 = new Grupo(partes[5]);
-                        grupos.add(grupo4);
-                        grupos.add(grupo5);
-                        grupos.add(grupo6);
-                }
-                user.setGrupos(grupos);
-                    
-            }*/
+            
             
             
             user.setRegistro(fecha);
