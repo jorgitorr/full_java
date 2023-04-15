@@ -42,9 +42,18 @@ public class Cliente {
             costeTerminoFijo = 5;
         else if(potenciaContratada<=6.4 && potenciaContratada>=3.4)
             costeTerminoFijo = 7;
-        else if(potenciaContratada>6.4)
+        else
             costeTerminoFijo = 6.4;
 
         return costeTerminoFijo + energiaConsumida * potenciaContratada;
     }
+
+    @Override
+    public String toString() {
+        return dni + ", potenciaContratada=" + potenciaContratada + ", energiaConsumida="
+                + energiaConsumida;
+    }
+
+
+    
 }

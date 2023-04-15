@@ -20,15 +20,26 @@ public class PruebaElectrica {
         c2.actualizaEnergiaConsumida(500);
         c3.actualizaEnergiaConsumida(100);
 
-        //actualiza la energia inyectada de c2
+        //Casteo c2 para poder acceder a los métodos de Cliente Paneles
         ClientePaneles c2Paneles = (ClientePaneles)c2;
-        c2Paneles.setContadorEnergiaInyectada(400);
+
+        //actualizo la energia inyectada 
         c2Paneles.actualizaEnergiaInyectada(200);
 
         //cantidad clientes con paneles
         System.out.println("cantidad clientes con paneles en la electrica: " + electrica.getCantidadClientesPaneles());
 
-        //facturación total
+        //facturación total de la eléctrica
         System.out.println("facturación total de la electrica: " + Math.round(electrica.getFacturacionTotal()*100.0)/100.0);
+
+        //imprimir clientes de la eléctrica
+        System.out.println("**********CLIENTES ELECTRICA*************");
+        int contadorClientes = 1;
+        for(Cliente c: electrica.getClientes()){
+            System.out.println("Cliente " + contadorClientes + ": " + c);
+            contadorClientes++;
+        }
+
+        System.out.println("*****************************************");
     }
 }

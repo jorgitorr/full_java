@@ -27,5 +27,12 @@ public class ClienteSmart extends Cliente{
     }
 
 
+    @Override
+    public String toString() {
+        return super.toString() + " porcentajeDescuento=" + porcentajeDescuento;
+    }
+
+
+    
     
 }

@@ -23,13 +23,6 @@ public class ClientePaneles extends Cliente{
         this.energiaInyectada = nuevaLecturaContador;
     }
 
-    /**
-     * para poder ingresarle un valor al contadorEnergiaInyectada desde el principio (no es necesario ya que se inicializa a cero)
-     * @param contadorEnergiaInyectada
-     */
-    public void setContadorEnergiaInyectada(double contadorEnergiaInyectada) {
-        this.contadorEnergiaInyectada = contadorEnergiaInyectada;
-    }
 
     @Override
     public double getEnergiaConsumida() {
@@ -47,8 +40,12 @@ public class ClientePaneles extends Cliente{
         return super.importeFactura() - energiaInyectada*0.0034;
     }
 
-    
+    @Override
+    public String toString() {
+        return super.toString() + " energiaInyectada=" + energiaInyectada + ", contadorEnergiaInyectada="
+                + contadorEnergiaInyectada;
+    }
 
-    
+
 
 }

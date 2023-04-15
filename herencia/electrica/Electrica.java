@@ -30,4 +30,9 @@ public class Electrica {
 
         return importeTotal;
     }
+
+    public Set<Cliente> getClientes() {
+        return clientes;
+    }
+
 }
