@@ -36,16 +36,14 @@ public class Cliente {
 
 
     public double importeFactura(){
-        double costeTerminoFijo = 1;
-
-        if(potenciaContratada<3.4)
-            costeTerminoFijo = 5;
-        else if(potenciaContratada<=6.4 && potenciaContratada>=3.4)
-            costeTerminoFijo = 7;
-        else
-            costeTerminoFijo = 6.4;
-
-        return costeTerminoFijo + energiaConsumida * potenciaContratada;
+        double importe = 0;
+        if (potenciaContratada < 3.4)
+            importe = 5 + energiaConsumida*0.00138;  //Usar constantes
+        else if (potenciaContratada >= 3.4 && potenciaContratada<6.4)
+            importe = 7 + energiaConsumida*0.000276;            
+        else if (potenciaContratada > 6.4)
+            importe = 9 + energiaConsumida*0.01104;             
+        return importe;
     }
 
     @Override

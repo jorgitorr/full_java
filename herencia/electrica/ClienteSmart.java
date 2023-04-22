@@ -23,7 +23,7 @@ public class ClienteSmart extends Cliente{
 
     @Override
     public double importeFactura() {
-        return super.importeFactura()-(porcentajeDescuento*getEnergiaConsumida()/100);
+        return super.importeFactura()-(porcentajeDescuento*super.importeFactura()/100);
     }
 
 

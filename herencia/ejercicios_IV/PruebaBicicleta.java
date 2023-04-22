@@ -1,4 +1,4 @@
-package herencia.ejercicios_IV;
+package ejercicios_IV;
 
 public class PruebaBicicleta {
     public static void main(String[] args) {

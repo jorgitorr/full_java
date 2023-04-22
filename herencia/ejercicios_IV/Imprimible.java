@@ -1,4 +1,4 @@
-package herencia.ejercicios_IV;
+package ejercicios_IV;
 
 public interface Imprimible extends Definir{
     public void imprime();

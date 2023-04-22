@@ -4,7 +4,7 @@ public class ClientePaneles extends Cliente{
     private double energiaInyectada;
     private double contadorEnergiaInyectada;
 
-    public ClientePaneles(String dni, int potenciaContratada) {
+    public ClientePaneles(String dni, double potenciaContratada) {
         super(dni, potenciaContratada);
         this.energiaInyectada = 0;
         this.contadorEnergiaInyectada = 0;
@@ -23,17 +23,6 @@ public class ClientePaneles extends Cliente{
         this.energiaInyectada = nuevaLecturaContador;
     }
 
-
-    @Override
-    public double getEnergiaConsumida() {
-        return super.getEnergiaConsumida();
-    }
-
-    
-    @Override
-    public void actualizaEnergiaConsumida(double nuevaLecturaContador) {
-        super.actualizaEnergiaConsumida(nuevaLecturaContador);
-    }
 
     @Override
     public double importeFactura() {

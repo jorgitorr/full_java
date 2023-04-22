@@ -23,7 +23,6 @@ public class Dosis {
     }
 
     
-
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -53,7 +52,7 @@ public class Dosis {
 
     @Override
     public String toString() {
-        return "[vacuna=" + vacuna + ", fecha=" + fecha + "]\n";
+        return vacuna + " " + fecha;
     }
 
     

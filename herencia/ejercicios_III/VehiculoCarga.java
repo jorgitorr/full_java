@@ -1,4 +1,4 @@
-package herencia.ejercicios_III;
+package ejercicios_III;
 
 public abstract class VehiculoCarga extends Vehiculo{
     private int tara;

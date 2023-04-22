@@ -1,4 +1,4 @@
-package herencia.ejercicios_III;
+package ejercicios_III;
 
 public class Coche extends VehiculoTransporte{
 

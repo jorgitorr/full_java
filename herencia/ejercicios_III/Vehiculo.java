@@ -1,4 +1,4 @@
-package herencia.ejercicios_III;
+package ejercicios_III;
 
 public abstract class Vehiculo{
     private String matricula;

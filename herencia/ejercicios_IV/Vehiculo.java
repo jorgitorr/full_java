@@ -1,4 +1,4 @@
-package herencia.ejercicios_IV;
+package ejercicios_IV;
 
 public abstract class Vehiculo {
     private int velocidadActual;

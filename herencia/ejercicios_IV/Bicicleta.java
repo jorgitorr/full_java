@@ -1,4 +1,4 @@
-package herencia.ejercicios_IV;
+package ejercicios_IV;
 
 public class Bicicleta extends Vehiculo implements Imprimible {
     private int platoActual;

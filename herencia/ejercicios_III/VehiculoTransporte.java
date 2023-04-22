@@ -1,5 +1,4 @@
-package herencia.ejercicios_III;
-
+package ejercicios_III;
 public abstract class VehiculoTransporte extends Vehiculo{
     private int plazas;
 

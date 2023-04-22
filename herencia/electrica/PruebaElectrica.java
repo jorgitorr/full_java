@@ -41,5 +41,28 @@ public class PruebaElectrica {
         }
 
         System.out.println("*****************************************");
+
+
+
+        Cliente clienteNormal1 = new Cliente("99999999D",3.4);
+        clienteNormal1.actualizaEnergiaConsumida(275);
+        Cliente clienteNormal2 = new Cliente("88888888G",7.3);
+        clienteNormal2.actualizaEnergiaConsumida(370);
+        Cliente clientePaneles1 = new ClientePaneles("77777777F",5.75);
+        clientePaneles1.actualizaEnergiaConsumida(100);
+        Cliente clientePaneles2 = new ClientePaneles("66666666H",4.6);
+        clientePaneles2.actualizaEnergiaConsumida(80);
+        Cliente clienteSmart = new ClienteSmart("55555555K",3.45,10);
+        clienteSmart.actualizaEnergiaConsumida(210);
+
+        Electrica electrica2 = new Electrica();
+        electrica2.agregaCliente(clienteNormal1);
+        electrica2.agregaCliente(clienteNormal2);
+        electrica2.agregaCliente(clientePaneles1);
+        electrica2.agregaCliente(clientePaneles2);
+        electrica2.agregaCliente(clienteSmart);
+
+        System.out.println("Cantidad de clientes con paneles: " + electrica2.getCantidadClientesPaneles());
+        System.out.println(String.format("Facturación total: %.2f",electrica2.getFacturacionTotal()));
     }
 }

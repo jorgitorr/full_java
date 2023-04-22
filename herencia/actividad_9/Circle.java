@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-import actividad_9.Shape;
+package actividad_9;
 
 /**
  *
