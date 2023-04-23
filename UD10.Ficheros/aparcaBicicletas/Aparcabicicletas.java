@@ -1,5 +1,6 @@
 
 
+
 public class Aparcabicicletas {
     private double x;
     private double y;
@@ -101,7 +102,7 @@ public class Aparcabicicletas {
     public String toString() {
         return "Barrio=" + barrio + 
         ", id=" + id +
-        "x=" + x + 
+        ", x=" + x + 
         ", y=" + y + 
         ", aros=" + aros +
         ", instalado=" + instalado;
@@ -110,10 +111,10 @@ public class Aparcabicicletas {
 
     public String toStringId() {
         return "id=" + id + 
-        "barrio=" + barrio 
-        + "aros=" + aros
-        + "instalado=" + instalado +
-        "x=" + x + 
+        ", barrio=" + barrio 
+        + ", aros=" + aros
+        + ", instalado=" + instalado +
+        ", x=" + x + 
         ", y=" + y;
     }
 

@@ -1,9 +1,10 @@
-
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class GestionAparcabicicletas {
@@ -24,14 +25,26 @@ public class GestionAparcabicicletas {
         coleccionAparcabicicletas.add(a);
     }
 
-
+    /**
+     * Copia las colecciones y las imprime
+     */
     private void imprimirListadoNombre(){
-        for(Aparcabicicletas a: coleccionAparcabicicletas)
+        //me queda poner  lo de cantidadAparcabicicleta y lo de aparcaBicicletas Instalados
+        List<Aparcabicicletas>copyColeccion = new ArrayList<>(coleccionAparcabicicletas);
+        Collections.sort(copyColeccion,new ComparadorAparcaBicicletasBarrio());
+
+        for(Aparcabicicletas a: copyColeccion)
             System.out.println(a);
     }
 
+    /**
+     * Copia las colecciones y las imprime
+     */
     private void imprimirListadoId(){
-        for(Aparcabicicletas a: coleccionAparcabicicletas)
+        List<Aparcabicicletas>copyColeccion = new ArrayList<>(coleccionAparcabicicletas);
+        Collections.sort(copyColeccion,new ComparadorAparcaBicicletasId());
+
+        for(Aparcabicicletas a: copyColeccion)
             System.out.println(a.toStringId());
     }
 
@@ -41,6 +54,7 @@ public class GestionAparcabicicletas {
 
         GestionAparcabicicletas gestion = new GestionAparcabicicletas();
         BufferedReader br = null;
+        Aparcabicicletas aparcabicicletas = null;
         try {
             br = new BufferedReader(new FileReader(args[0]));
             String cadena;
@@ -55,14 +69,15 @@ public class GestionAparcabicicletas {
                 int aros = Integer.parseInt(palabras[4]);
                 String instalado = palabras[5];
 
-                Aparcabicicletas aparcabicicletas = new Aparcabicicletas(x, y, id, barrios, aros, instalado);
-                gestion.anadirAparcaBicicleta(aparcabicicletas);
+                aparcabicicletas = new Aparcabicicletas(x, y, id, barrios, aros, instalado);
+                gestion.anadirAparcaBicicleta(aparcabicicletas);  
+            }  
+            
+            System.out.println("*******LISTADO POR NOMBRE***********");
+            gestion.imprimirListadoNombre();
+            System.out.println("*********LISTADO POR ID***************");
+            gestion.imprimirListadoId(); 
 
-                System.out.println("*******LISTADO POR NOMBRE***********");
-                gestion.imprimirListadoNombre();
-                System.out.println("*********LISTADO POR ID***************");
-                gestion.imprimirListadoId();    
-            }         
         } catch (IOException e) {
             System.err.println("Error");
         }finally{
