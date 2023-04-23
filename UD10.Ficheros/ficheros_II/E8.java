@@ -94,17 +94,17 @@ public class E8 {
     }
 
     public static int escribeFichero(String fichero, String texto, boolean modo){
-        BufferedWriter br = null;
+        BufferedWriter bw = null;
         try {
-            br = new BufferedWriter(new FileWriter("UD10.Ficheros\\"+fichero,modo));
-            br.write(texto);
+            bw = new BufferedWriter(new FileWriter("UD10.Ficheros\\"+fichero,modo));
+            bw.write(texto);
         } catch (IOException e) {
             System.err.println("Error al leer archivo");
         }finally{
             
             try {
-                if(br!=null)
-                    br.close();
+                if(bw!=null)
+                    bw.close();
             } catch (IOException e) {
                 System.err.println("Error");
             }
@@ -129,7 +129,6 @@ public class E8 {
         } catch (IOException e) {
             System.err.println("Error E/S");
         }finally{
-            
             try {
                 if(br!=null)
                     br.close();
@@ -141,16 +140,7 @@ public class E8 {
         }
         return 0;
     }
-    /*public static void main(String[] args) {
-        System.out.println("***************TAMANIO FICHERO*******************");
-        System.out.println("El archivo tiene un tamanio de: " + E8.tamanioFichero("fichero_copia.txt"));
-        System.out.println("*******************CONTENIDO FICHERO*****************");
-        System.out.println(E8.contenidoFichero("fichero_copia.txt"));
-        System.out.println("****************LINEAS FICHERO************************");
-        System.out.println("El fichero tiene "+ E8.lineasFichero("fichero_copia.txt") + " lineas");
-        System.out.println("********************ESCRIBE FICHERO*******************");
-        E8.escribeFichero("fichero_copia.txt", "los ejercicios de Gabriela son easies", true);
-        System.out.println("********************Copia de ficheros*****************");
+    public static void main(String[] args) {
         E8.copiaFichero("fichero_texto.txt", "Fichero_copia.txt");
-    }*/
+    }
 }

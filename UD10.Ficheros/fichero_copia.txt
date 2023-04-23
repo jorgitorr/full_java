@@ -1,12 +1,1 @@
-fila nãºmero: 1
-fila nãºmero: 2
-fila nãºmero: 3
-fila nãºmero: 4
-fila nãºmero: 5
-fila nãºmero: 6
-fila nãºmero: 7
-fila nãºmero: 8
-fila nãºmero: 9
-fila nãºmero: 10
-lA cAdEnA EstA cOmplEtAmEntE vAcIA
-Las cosas de ficheros
+Fuerte es la dicha

@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class E9 {
     public static void main(String[] args) {
 
-        //corregir 4 y 5
+        //corregir 5
         Scanner sc = new Scanner(System.in);
         String fichero;
         while(true){
@@ -42,14 +42,17 @@ public class E9 {
                     System.out.println("Introduce un modo(true/false)");
                     boolean modo = sc.nextBoolean();
                     E8.escribeFichero(fichero, texto, modo);
+                    break;
                 case 5:
                     System.out.println("Introduce el primer fichero: ");
                     String fichero1 = sc.nextLine();
                     System.out.println("Introduce el segundo fichero: ");
                     String fichero2 = sc.nextLine();
                     E8.copiaFichero(fichero1,fichero2);
+                    break;
                 case 6:
                     System.out.println("Saliendo...");
+                    break;
             } 
 
             if(opcion==6)
