@@ -50,7 +50,7 @@ public class GestionAparcabicicletas {
 
 
     private static void cargaDatos(String[] args) {
-        System.out.println(args[0]);
+        //System.out.println(args[0]);->este es el documento que uso, ya que es único
 
         GestionAparcabicicletas gestion = new GestionAparcabicicletas();
         BufferedReader br = null;
@@ -79,7 +79,8 @@ public class GestionAparcabicicletas {
             gestion.imprimirListadoId(); 
 
         } catch (IOException e) {
-            System.err.println("Error");
+            //tengo que crear mi propia excepcion
+            System.err.println("Error, No se encuentra el archivo");
         }finally{
             try {
                 if(br!=null)
