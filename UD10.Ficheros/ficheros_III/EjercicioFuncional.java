@@ -4,10 +4,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Ejercicio {
+public class EjercicioFuncional {
+
+    private static BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
 
     public static void leerCadena(){
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+        try {
             System.out.println("Introduce una cadena");
             String cadena = br.readLine();
             System.out.println(cadena);
@@ -17,9 +19,9 @@ public class Ejercicio {
     }
 
     public static void leerCaracter(){
-        try (BufferedReader lectura = new BufferedReader(new InputStreamReader(System.in))) {
+        try {
             System.out.println("Introduce un caracter");
-            char caracter = lectura.readLine().charAt(0);
+            char caracter = br.readLine().charAt(0);
             System.out.println(caracter);
         } catch (IOException e) {
             System.err.println("Error");
@@ -27,7 +29,7 @@ public class Ejercicio {
     }
 
     public static void leerEntero(){
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+        try {
             System.out.println("Introduce un numero: ");
             String lectura = br.readLine();
             int entero = Integer.parseInt(lectura);
@@ -38,7 +40,7 @@ public class Ejercicio {
     }
 
     public static void leerShort(){
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+        try {
             System.out.println("Introduce un numero: ");
             String lectura = br.readLine();
             short lecturaShort = Short.parseShort(lectura);
@@ -49,7 +51,7 @@ public class Ejercicio {
     }
 
     public static void leerDouble(){
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+        try {
             System.out.println("Introduce un numero: ");
             String lectura = br.readLine();
             double lecturaShort = Double.parseDouble(lectura);
@@ -60,7 +62,7 @@ public class Ejercicio {
     }
 
     public static void leerFloat(){
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+        try {
             System.out.println("Introduce un numero: ");
             String lectura = br.readLine();
             float lecturaShort = Float.parseFloat(lectura);
@@ -69,9 +71,10 @@ public class Ejercicio {
             System.err.println("Error al leer archivo");
         }
     }
+
     public static void main(String[] args) {
         while(true){
-            try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+            try {
                 System.out.println("Menú\n\n"+
                 "--------\n"+
                 "1. Leer una cadena de texto.\n"+
@@ -82,39 +85,37 @@ public class Ejercicio {
                 "6. Leer un Float.\n"+
                 "0. Salir.");
                 String lectura = br.readLine();
-                switch(lectura){
-                        case "1":
-                            Ejercicio.leerCadena();
+                int opcion = Integer.parseInt(lectura);
+                switch(opcion){
+                        case 1:
+                            EjercicioFuncional.leerCadena();
                             break;
-                        case "2":
-                            Ejercicio.leerCaracter();
+                        case 2:
+                            EjercicioFuncional.leerCaracter();
                             break;
-                        case "3":
-                            Ejercicio.leerEntero();
+                        case 3:
+                            EjercicioFuncional.leerEntero();
                             break;
-                        case "4":
-                            Ejercicio.leerShort();
+                        case 4:
+                            EjercicioFuncional.leerShort();
                             break;
-                        case "5":
-                            Ejercicio.leerDouble();
+                        case 5:
+                            EjercicioFuncional.leerDouble();
                             break;
-                        case "6":
-                            Ejercicio.leerFloat();
+                        case 6:
+                            EjercicioFuncional.leerFloat();
                             break;
-                        case "0":
+                        case 0:
                             System.out.println("Saliendo");
-                            break;
+                            return;
                 }
-
-                if(lectura=="0")
-                    break;
-                
-            } catch (IOException e) {
-                System.err.println("Error al leer");
-                break;
+            
+            }catch(IOException e){
+                System.err.println("Error al leer dato");
             }
-
-        
         }
+
     }
 }
+
+

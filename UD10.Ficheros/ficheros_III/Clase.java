@@ -19,22 +19,22 @@ public class Clase {
             sc.nextLine();
             switch(opcion){
                         case 1:
-                            Ejercicio.leerCadena();
+                            EjercicioNoVa.leerCadena();
                             break;
                         case 2:
-                            Ejercicio.leerCaracter();
+                            EjercicioNoVa.leerCaracter();
                             break;
                         case 3:
-                            Ejercicio.leerEntero();
+                            EjercicioNoVa.leerEntero();
                             break;
                         case 4:
-                            Ejercicio.leerShort();
+                            EjercicioNoVa.leerShort();
                             break;
                         case 5:
-                            Ejercicio.leerDouble();
+                            EjercicioNoVa.leerDouble();
                             break;
                         case 6:
-                            Ejercicio.leerFloat();
+                            EjercicioNoVa.leerFloat();
                             break;
                         case 0:
                             System.out.println("Saliendo");

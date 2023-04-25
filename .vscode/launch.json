@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Intento",
+            "request": "launch",
+            "mainClass": "ficheros_III.Intento",
+            "projectName": "src_f036a857"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
