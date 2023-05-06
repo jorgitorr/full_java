@@ -14,7 +14,6 @@ public class E1 {
             bw = new FileWriter("UD10.Ficheros\\fichero_copia.txt");
 
             //si lo hiciera con buffer copiaria todo en una linea
-
             while((cadena=br.read())!=-1){
                 bw.write(cadena);
             }

@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Ejercicio5",
+            "request": "launch",
+            "mainClass": "ficheros_IV.Ejercicio5",
+            "projectName": "src_f036a857"
+        },
+        {
+            "type": "java",
+            "name": "PruebaEmpresa",
+            "request": "launch",
+            "mainClass": "PruebaEmpresa",
+            "projectName": "src_f036a857"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio4",
+            "request": "launch",
+            "mainClass": "ficheros_IV.Ejercicio4",
+            "projectName": "src_f036a857"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio3",
+            "request": "launch",
+            "mainClass": "ficheros_IV.Ejercicio3",
+            "projectName": "src_f036a857"
+        },
+        {
+            "type": "java",
             "name": "Intento",
             "request": "launch",
             "mainClass": "ficheros_III.Intento",

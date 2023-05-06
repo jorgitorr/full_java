@@ -1,95 +1,98 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
+import java.util.TreeSet;
 
 public class GestionAparcabicicletas {
-    private Set<Aparcabicicletas>coleccionAparcabicicletas;
+    private static Map<String,Set<Aparcabicicletas>>mapa;
     
     
     public GestionAparcabicicletas() {
-        coleccionAparcabicicletas = new HashSet<>();
+        mapa = new TreeMap<>();
     }
 
-    public static void main(String[] args) {
-        if(args.length>0){
+    public static void main(String[] args) throws LineasComandosException {
+        if(args.length==1)
             cargaDatos(args);
+        else
+            throw new LineasComandosException("No has pasado el archivo");//escepcion que se lanza
+    }
+
+
+    public void anadirAlMapa(String barrio, Aparcabicicletas aparcabicicletas){
+        if(!mapa.containsKey(barrio))
+            mapa.put(barrio, new TreeSet<>(new ComparadorAparcaBicicletasId()));
+        mapa.get(barrio).add(aparcabicicletas);
+    }
+
+
+    public Aparcabicicletas buscaAparcabicicletas(Aparcabicicletas a){
+        Aparcabicicletas aparcabicicletas = a;
+        for(String nombre: mapa.keySet()){
+            if(mapa.get(nombre).equals(a)){
+                aparcabicicletas = a;
+            }
+        }
+        return aparcabicicletas;
+    }
+
+    private int numAparcabicicletas(String barrio){
+        int cont = 0;
+        for(String b: mapa.keySet()){
+            if(mapa.get(b).equals(barrio)){
+                cont = mapa.get(barrio).size();
+            }
+        }
+        return cont;
+    }
+
+
+    public void imprimirBarrio(){
+        for(String barrio: mapa.keySet()){
+            System.out.println(barrio + ":" + mapa.get(barrio) 
+            + "\nnum aparcabicicletas:" + numAparcabicicletas(barrio));
         }
     }
 
-    private void anadirAparcaBicicleta(Aparcabicicletas a){
-        coleccionAparcabicicletas.add(a);
+    public void imprimirXId(){
+        Set<Aparcabicicletas>aparcabicicletas = new TreeSet<>(new ComparadorAparcaBicicletasId());
+        for(String nombre: mapa.keySet())
+            aparcabicicletas.addAll(mapa.get(nombre));
+        
+        System.out.println(aparcabicicletas);
     }
-
-    /**
-     * Copia las colecciones y las imprime
-     */
-    private void imprimirListadoNombre(){
-        //me queda poner  lo de cantidadAparcabicicleta y lo de aparcaBicicletas Instalados
-        List<Aparcabicicletas>copyColeccion = new ArrayList<>(coleccionAparcabicicletas);
-        Collections.sort(copyColeccion,new ComparadorAparcaBicicletasBarrio());
-
-        for(Aparcabicicletas a: copyColeccion)
-            System.out.println(a);
-    }
-
-    /**
-     * Copia las colecciones y las imprime
-     */
-    private void imprimirListadoId(){
-        List<Aparcabicicletas>copyColeccion = new ArrayList<>(coleccionAparcabicicletas);
-        Collections.sort(copyColeccion,new ComparadorAparcaBicicletasId());
-
-        for(Aparcabicicletas a: copyColeccion)
-            System.out.println(a.toStringId());
-    }
-
+    
 
     private static void cargaDatos(String[] args) {
-        //System.out.println(args[0]);->este es el documento que uso, ya que es único
-
-        GestionAparcabicicletas gestion = new GestionAparcabicicletas();
-        BufferedReader br = null;
-        Aparcabicicletas aparcabicicletas = null;
-        try {
-            br = new BufferedReader(new FileReader(args[0]));
+        try (BufferedReader br = new BufferedReader(new FileReader(args[0]))) {
             String cadena;
-            String[]palabras;
-            
+            GestionAparcabicicletas g = new GestionAparcabicicletas();
             while((cadena=br.readLine())!=null){
-                palabras = cadena.split(",");
-                double x = Double.parseDouble(palabras[0]);
-                double y = Double.parseDouble(palabras[1]);
-                int id = Integer.parseInt(palabras[2]);
-                String barrios = palabras[3];
-                int aros = Integer.parseInt(palabras[4]);
-                String instalado = palabras[5];
+                String[]cadenas = cadena.split(",");
+                double x = Double.parseDouble(cadenas[0]);
+                double y = Double.parseDouble(cadenas[1]);
+                int id = Integer.parseInt(cadenas[2]);
+                String barrio = cadenas[3];
+                int aros = Integer.parseInt(cadenas[4]);
+                boolean instalado = cadenas[5].equals("SI");
 
-                aparcabicicletas = new Aparcabicicletas(x, y, id, barrios, aros, instalado);
-                gestion.anadirAparcaBicicleta(aparcabicicletas);  
-            }  
-            
-            System.out.println("*******LISTADO POR NOMBRE***********");
-            gestion.imprimirListadoNombre();
-            System.out.println("*********LISTADO POR ID***************");
-            gestion.imprimirListadoId(); 
-
-        } catch (IOException e) {
-            //tengo que crear mi propia excepcion
-            System.err.println("Error, No se encuentra el archivo");
-        }finally{
-            try {
-                if(br!=null)
-                    br.close();
-            } catch (IOException e) {
-                System.err.println("Error al cerrar fichero");
+                Aparcabicicletas a = new Aparcabicicletas(x, y, id, barrio, aros, instalado);
+                a = g.buscaAparcabicicletas(a);//si ya existe el aparcabicicletas no crea uno nueva
+                g.anadirAlMapa(barrio, a);
             }
-            
+
+            System.out.println("***********ORDENADO POR NOMBRE DE BARRIO*****************");
+            g.imprimirBarrio();
+            System.out.println("*************ORDENADO POR ID*******************");
+            g.imprimirXId();
+        } catch (IOException e) {
+            System.err.println("Error al leer fichero");
         }
     }
+
+    
     
 }

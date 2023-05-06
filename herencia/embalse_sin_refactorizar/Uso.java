@@ -1,0 +1,5 @@
+package embalse;
+
+public enum Uso {
+    ABASTECIMIENTO, RIEGO, ELECTRICIDAD, INDUSTRIAL, PESCA, NAVEGACINO, BANIO;
+}
