@@ -3,14 +3,14 @@ import java.util.Set;
 public class Estudiante {
     private String nombre;
     private Set<String>respuestas;
-    private Casas casa;
+    private Casa casa;
 
 
-    public void setCasa(Casas casa) {
+    public void setCasa(Casa casa) {
         this.casa = casa;
     }
 
-    public Casas getCasa() {
+    public Casa getCasa() {
         return casa;
     }
 

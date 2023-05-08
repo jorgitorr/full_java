@@ -15,6 +15,7 @@ public class Sombrero {
 
 
     public void cargarEstudiantes(String args1,String args2){
+        Sombrero sombrero = new Sombrero();
         try (BufferedReader br1 = new BufferedReader(new FileReader(args1));
         BufferedReader br2 = new BufferedReader(new FileReader(args2))) {
             String cadena; 
@@ -38,7 +39,11 @@ public class Sombrero {
                 datos = cadena.split(":");
                 respuestas = datos[1].split(";");
                 
-                
+                int puntos = 1;
+                for(String respuesta:respuestas){
+                    sombrero.puntosEstudiante(respuesta,puntos);
+                    puntos++;
+                }
             }
 
         } catch (IOException e) {
@@ -47,23 +52,39 @@ public class Sombrero {
 
     }
 
-
-    public void puntosEstudiante(){
+    /**
+     * 
+     * @param respuesta
+     * @param puntos
+     */
+    public void puntosEstudiante(String respuesta, int puntos){
+        int puntosXEstudiante = 0;
         for(Estudiante estudiante: estudiantes){
-            
+            for(String r:estudiante.getRespuestas()){
+                if(r.equals(respuesta)){
+                   puntosXEstudiante = puntos;
+                }
+            }
+            casaEstudiante(estudiante, puntosXEstudiante);
         }
     }
 
-    public void casaEstudiante(){
-        /*if(puntajeAlumno<=20){
-            casaAlumno = "Hufflepuff";
-        }else if(puntajeAlumno >= 21 && puntajeAlumno<29){
-            casaAlumno = "Ravenclaw";
-        }else if(puntajeAlumno >= 29 && puntajeAlumno<37){
-            casaAlumno = "Gryffindor";
+
+    /**
+     * casa por estudiante
+     * @param estudiante
+     * @param puntos
+     */
+    public void casaEstudiante(Estudiante estudiante, int puntos){
+        if(puntos<=20){
+            estudiante.setCasa(Casa.HUFFLEPUFF);
+        }else if(puntos >= 21 && puntos<29){
+            estudiante.setCasa(Casa.RAVENCLAW);
+        }else if(puntos >= 29 && puntos<37){
+            estudiante.setCasa(Casa.GRYFFINDOR);
         }else{
-            casaAlumno = "Slytherin";
-        }*/
+            estudiante.setCasa(Casa.SLYTHERIN);
+        }
     }
 
 

@@ -1,4 +1,4 @@
-public enum Casas {
+public enum Casa {
     HUFFLEPUFF("Hufflepuff"), RAVENCLAW("Ravenclaw"), GRYFFINDOR("Gryffindor"),
     SLYTHERIN("Slytherin");
     
@@ -8,7 +8,7 @@ public enum Casas {
         return nombre;
     }
 
-    private Casas(String nombre) {
+    private Casa(String nombre) {
         this.nombre = nombre;
     }
 
