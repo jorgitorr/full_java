@@ -1,0 +1,15 @@
+¿Ananecer o atardecer?:Atardecer;Amanecer
+¿Bosque o Río?:Río;Bosque
+¿Luna o estrellas?:Estrellas;Luna
+¿Blanco o negro?:Blanco;Negro
+¿Qué tipo de instrumento agrada más a tu oído?:Trompeta;Piano;Tambor;Violín
+¿Cuál de los siguientes odiarías más que la gente te llame?:Egoísta;Ignorante;Cobarde;Ordinario
+Preferirías inventar una poción que te garantice...:Amar;Sabiduría;Gloria;Fuerza
+Si pudieras tener algún poder, ¿cuál elegirías?:El poder de la fuerza sobrehumana;El poder de cambiar tu apariencia a voluntad;El poder de la invisibilidad;El poder de cambiar el pasado
+¿Qué camino te tienta más?:El camino ancho, soleado y cubierto de hierba;La calle adoquinada bordeada de edificios antiguos;El camino retorcido y cubierto de hojas a través del bosque;El callejón estrecho, oscuro e iluminado por faroles
+¿Cuál de los siguientes te gustaría estudiar?:Trolls;Duendes;Fantasmas;Vampiros
+¿Qué preferirías ser?:Apreciado;Imitado;De confianza;Envidiado
+¿Con cuál de los siguientes te resulta más difícil lidiar?:Soledad;Ser ignorado;Hambre;Aburrimiento
+Entras en un jardín encantado. ¿Qué sería lo más curioso de examinar primero?:La estatua de un anciano mago con un ojo extrañamente centelleante;El árbol de hojas plateadas que da manzanas doradas;Los gordos hongos rojos que parecen estar hablando entre sí;El estanque burbujeante, en cuyas profundidades se arremolina algo luminoso
+Se colocan cuatro copas delante de ti. ¿Cuál elegirías para beber?:El líquido dorado tan brillante que hace daño a la vista, y que hace bailar las manchas solares por toda la habitación;El líquido espumoso y plateado que brilla como si contuviera diamantes en polvo;La bebida suave, espesa y ricamente morada que desprende un delicioso olor a chocolate y ciruelas;El misterioso líquido negro que brilla como la tinta y emite vapores que te hacen ver extrañas visiones
+¿Qué es lo que más esperas aprender en Hogwarts?:Aparición y Desaparición (poder materializarse y desmaterializarse a voluntad);Cada área de la magia que pueda;Todo sobre criaturas mágicas;Maleficios y hechizos
