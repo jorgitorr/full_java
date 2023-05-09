@@ -60,9 +60,10 @@ public class Sombrero {
     public void puntosEstudiante(String respuesta, int puntos){
         int puntosXEstudiante = 0;
         for(Estudiante estudiante: estudiantes){
+            puntosXEstudiante = 0;
             for(String r:estudiante.getRespuestas()){
                 if(r.equals(respuesta)){
-                   puntosXEstudiante = puntos;
+                   puntosXEstudiante += puntos;
                 }
             }
             casaEstudiante(estudiante, puntosXEstudiante);
