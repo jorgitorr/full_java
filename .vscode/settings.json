@@ -1,10 +1,11 @@
 {
     "java.project.sourcePaths": [
         "herencia/embalse_refactorizado",
+        "examen_hogwarts_refactorizado",
         "UD10.Ficheros/ficheros_I",
         "UD10.Ficheros/archivos",
         "UD10.Ficheros/aparcaBicicletas",
         "UD10.Ficheros",
-        "examen_hogwarts_refactorizado"
+        "fxapps/proyecto/src/tresEnRaya"
     ]
 }

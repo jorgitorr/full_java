@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Controller",
+            "request": "launch",
+            "mainClass": "Controller",
+            "projectName": "src_f036a857"
+        },
+        {
+            "type": "java",
             "name": "Ejercicio5",
             "request": "launch",
             "mainClass": "ficheros_IV.Ejercicio5",

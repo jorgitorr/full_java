@@ -6,10 +6,18 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Controller",
+            "request": "launch",
+            "mainClass": "tresEnRaya.Controller",
+            "projectName": "proyecto_5b125eb8"
+        },
+        {
+            "type": "java",
             "name": "TresEnRaya",
             "request": "launch",
             "mainClass": "tresEnRaya.TresEnRaya",
-            "projectName": "proyecto_5b125eb8"
+            "projectName": "proyecto_5b125eb8",
+            "vmArgs": "--module-path c:/Users/jorge/Documents/javafx-sdk-17.0.7/lib --add-modules javafx.controls,javafx.fxml"
         },
         {
             "type": "java",
