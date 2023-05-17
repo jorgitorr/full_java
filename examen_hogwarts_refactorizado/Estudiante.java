@@ -1,8 +1,15 @@
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class Estudiante {
     private String nombre;
     private Set<String>respuestas;
+    
+    
+    public void setRespuestas(Set<String> respuestas) {
+        this.respuestas = respuestas;
+    }
+
     private Casa casa;
 
 
@@ -14,9 +21,10 @@ public class Estudiante {
         return casa;
     }
 
-    public Estudiante(String nombre, Set<String> respuestas) {
+    public Estudiante(String nombre) {
         this.nombre = nombre;
-        this.respuestas = respuestas;
+        respuestas = new LinkedHashSet<>();
+        this.casa = null;
     }
 
     public Set<String> getRespuestas() {

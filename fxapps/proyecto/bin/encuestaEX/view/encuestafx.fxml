@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="441.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="encuestaEX.controller.Controller">
+   <children>
+      <Label layoutX="29.0" layoutY="14.0" prefHeight="29.0" prefWidth="72.0" text="Profesión:" />
+      <Label layoutX="24.0" layoutY="56.0" prefHeight="29.0" prefWidth="82.0" text="Nº hermanos:" />
+      <TextField fx:id="profesionTextField" layoutX="101.0" layoutY="16.0" prefHeight="25.0" prefWidth="97.0" />
+      <Spinner fx:id="HermanosSpinner" layoutX="115.0" layoutY="58.0" prefHeight="25.0" prefWidth="57.0" />
+      <Label layoutX="235.0" layoutY="56.0" prefHeight="25.0" prefWidth="44.0" text="Edad" />
+      <Label layoutX="44.0" layoutY="109.0" prefHeight="25.0" prefWidth="57.0" text="Sexo" />
+      <CheckBox fx:id="DeporteCheckBox" layoutX="44.0" layoutY="220.0" mnemonicParsing="false" onAction="#onCheckDeporte" prefHeight="25.0" prefWidth="162.0" text="¿Practicas algún deporte?" />
+      <ListView fx:id="DeporteListView" layoutX="221.0" layoutY="224.0" onMouseClicked="#onClickDeporte" prefHeight="55.0" prefWidth="162.0" />
+      <Label layoutX="39.0" layoutY="291.0" prefHeight="29.0" prefWidth="235.0" text="Marque del 1 al 10 su grado de aficcion: " />
+      <Label layoutX="44.0" layoutY="330.0" prefHeight="17.0" prefWidth="72.0" text="Compras:" />
+      <Label layoutX="39.0" layoutY="378.0" prefHeight="25.0" prefWidth="82.0" text="Ver televisión:" />
+      <Label layoutX="37.0" layoutY="438.0" prefHeight="17.0" prefWidth="72.0" text="Ir al cine:" />
+      <Slider fx:id="comprasSlider" layoutX="45.0" layoutY="355.0" />
+      <Slider fx:id="televisionSlider" layoutX="45.0" layoutY="403.0" />
+      <Slider fx:id="cineSlider" layoutX="45.0" layoutY="462.0" />
+      <Button fx:id="aceptarButton" layoutX="304.0" layoutY="366.0" mnemonicParsing="false" onAction="#onAceptar" text="Aceptar" />
+      <Button fx:id="cancelarButton" layoutX="302.0" layoutY="421.0" mnemonicParsing="false" onAction="#onCancelar" text="Cancelar" />
+      <ChoiceBox fx:id="edadChoiceBox" layoutX="274.0" layoutY="56.0" prefHeight="25.0" prefWidth="97.0" />
+      <AnchorPane layoutX="44.0" layoutY="134.0" prefHeight="55.0" prefWidth="212.0">
+         <children>
+            <RadioButton fx:id="hombreRadioButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#esHombre" prefHeight="17.0" prefWidth="82.0" text="Hombre" />
+            <RadioButton fx:id="MujerRadioButton" layoutX="117.0" layoutY="14.0" mnemonicParsing="false" onAction="#esMujer" text="Mujer" />
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>

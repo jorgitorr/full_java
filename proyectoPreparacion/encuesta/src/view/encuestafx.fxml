@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="487.0" prefWidth="454.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+   <children>
+      <Text layoutX="30.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profesion:" wrappingWidth="74.466796875" />
+      <TextField fx:id="profesionTextField" layoutX="109.0" layoutY="25.0" prefHeight="25.0" prefWidth="91.0" />
+      <Text layoutX="22.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nº Hermanos:" wrappingWidth="107.35546875" />
+      <Spinner fx:id="NumHermanosSpinner" layoutX="122.0" layoutY="73.0" prefHeight="25.0" prefWidth="65.0" />
+      <Text layoutX="206.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edad:" wrappingWidth="42.6943359375" />
+      <ChoiceBox fx:id="edadChoiceBox" layoutX="258.0" layoutY="73.0" prefHeight="25.0" prefWidth="97.0" />
+      <Text layoutX="35.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sexo:" wrappingWidth="41.189453125" />
+      <AnchorPane layoutX="-3.0" layoutY="305.0" minHeight="0.0" minWidth="0.0" prefHeight="188.0" prefWidth="461.0">
+         <children>
+            <Slider fx:id="comprasSlider" layoutX="28.0" layoutY="59.0" />
+            <Slider fx:id="televisionSlider" layoutX="28.0" layoutY="109.0" />
+            <Slider fx:id="cineSlider" layoutX="28.0" layoutY="160.0" />
+            <Text layoutX="22.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Marque del 1 al 10 su grado de aficción a:" wrappingWidth="292.0" />
+            <Text layoutX="28.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Compras:" wrappingWidth="62.775390625" />
+            <Text layoutX="28.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ver televisión:" wrappingWidth="97.0" />
+            <Text layoutX="28.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ir al cine:" wrappingWidth="74.466796875" />
+            <Button fx:id="AceptarButton" layoutX="295.0" layoutY="61.0" mnemonicParsing="false" onAction="#aceptar" text="Aceptar" />
+            <Button fx:id="cancelarButton" layoutX="293.0" layoutY="122.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+         </children>
+      </AnchorPane>
+      <CheckBox fx:id="deporteCheckBox" layoutX="36.0" layoutY="221.0" mnemonicParsing="false" onAction="#tieneDeporte" text="¿Practica algún deporte?" />
+      <Text layoutX="285.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Cual?" />
+      <ListView fx:id="DeporteListView" layoutX="275.0" layoutY="221.0" prefHeight="81.0" prefWidth="160.0" />
+      <ToggleButton layoutX="32.0" layoutY="143.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="194.0" />
+      <RadioButton fx:id="hombreButton" layoutX="36.0" layoutY="161.0" mnemonicParsing="false" onAction="#esHombre" text="Hombre">
+         <toggleGroup>
+            <ToggleGroup fx:id="Sexo" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="mujerButton" layoutX="145.0" layoutY="161.0" mnemonicParsing="false" onAction="#esMujer" text="Mujer" toggleGroup="$Sexo" />
+      <Label fx:id="mensajeLabel" layoutX="271.0" layoutY="143.0" prefHeight="25.0" prefWidth="151.0" />
+   </children>
+</Pane>

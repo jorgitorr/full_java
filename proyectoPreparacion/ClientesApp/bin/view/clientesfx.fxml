@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="503.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+   <children>
+      <TitledPane animated="false" layoutX="26.0" layoutY="28.0" prefHeight="198.0" prefWidth="298.0" text="Alta Cliente">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="172.0" prefWidth="268.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" text="Id:" />
+                  <Label layoutX="14.0" layoutY="51.0" text="Nombre:" />
+                  <Label layoutX="14.0" layoutY="89.0" text="Apellido:" />
+                  <Label layoutX="13.0" layoutY="130.0" text="País:" />
+                  <TextField fx:id="idTextField" layoutX="91.0" layoutY="10.0" prefHeight="25.0" prefWidth="119.0" />
+                  <TextField fx:id="nombreTextField" layoutX="91.0" layoutY="47.0" prefHeight="25.0" prefWidth="119.0" />
+                  <TextField fx:id="apellidoTextField" layoutX="91.0" layoutY="85.0" prefHeight="25.0" prefWidth="119.0" />
+                  <TextField fx:id="paisTextField" layoutX="91.0" layoutY="126.0" prefHeight="25.0" prefWidth="120.0" />
+                  <Button fx:id="insertarButton" layoutX="222.0" layoutY="135.0" mnemonicParsing="false" onAction="#insertarCliente" text="INSERTAR" />
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <TitledPane animated="false" layoutX="26.0" layoutY="241.0" prefHeight="203.0" prefWidth="298.0" text="Información Cliente">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="28.0" layoutY="24.0" text="Id:" />
+                  <Label fx:id="idLabel" layoutX="106.0" layoutY="21.0" prefHeight="24.0" prefWidth="109.0" />
+                  <Label layoutX="27.0" layoutY="62.0" text="Nombre:" />
+                  <Label fx:id="nombreLabel" layoutX="105.0" layoutY="59.0" prefHeight="24.0" prefWidth="107.0" />
+                  <Label layoutX="27.0" layoutY="107.0" text="Apellido:" />
+                  <Label fx:id="apellidoLabel" layoutX="106.0" layoutY="104.0" prefHeight="23.0" prefWidth="105.0" />
+                  <Label layoutX="27.0" layoutY="146.0" text="País:" />
+                  <Label fx:id="paisLabel" layoutX="98.0" layoutY="143.0" prefHeight="24.0" prefWidth="101.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <ListView fx:id="ClientesListView" layoutX="357.0" layoutY="54.0" onMouseClicked="#mostrarCliente" prefHeight="395.0" prefWidth="249.0" />
+      <Label layoutX="357.0" layoutY="28.0" prefHeight="17.0" prefWidth="51.0" text="Clientes" />
+      <Button fx:id="borrarButton" layoutX="357.0" layoutY="464.0" mnemonicParsing="false" onAction="#borrar" text="BORRAR" />
+   </children>
+</Pane>

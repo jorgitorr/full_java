@@ -9,6 +9,14 @@
             "name": "Sombrero",
             "request": "launch",
             "mainClass": "Sombrero",
+            "projectName": "examen_hogwarts_refactorizado_cbea0020",
+            "args": "respuestas_estudiantes.txt respuestas_preguntas.txt"
+        },
+        {
+            "type": "java",
+            "name": "Sombrero",
+            "request": "launch",
+            "mainClass": "Sombrero",
             "projectName": "examen_hogwarts_refactorizado_715ff202",
             "args": "respuestas_estudiantes.txt respuestas_preguntas.txt"
         },

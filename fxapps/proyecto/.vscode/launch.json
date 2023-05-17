@@ -4,6 +4,38 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        /*{
+            "type": "java",
+            "name": "EncuestaMain",
+            "request": "launch",
+            "mainClass": "encuestaEX.main.EncuestaMain",
+            "projectName": "proyecto_5b125eb8",
+            "vmArgs": "--module-path c:/Users/jorge/Documents/javafx-sdk-17.0.7/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Encuesta",
+            "request": "launch",
+            "mainClass": "encuestaEX.main.Encuesta",
+            "projectName": "proyecto_5b125eb8",
+            "vmArgs": "--module-path c:/Users/jorge/Documents/javafx-sdk-17.0.7/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Encuesta",
+            "request": "launch",
+            "mainClass": "encuestaEX.Encuesta",
+            "projectName": "proyecto_5b125eb8",
+            "vmArgs": "--module-path c:/Users/jorge/Documents/javafx-sdk-17.0.7/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "prueba",
+            "request": "launch",
+            "mainClass": "prueba.prueba",
+            "projectName": "proyecto_5b125eb8",
+            "vmArgs": "--module-path c:/Users/jorge/Documents/javafx-sdk-17.0.7/lib --add-modules javafx.controls,javafx.fxml"
+        },*/
         {
             "type": "java",
             "name": "ClienteApp",

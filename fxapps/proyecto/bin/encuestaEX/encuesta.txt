@@ -1,0 +1,1 @@
+profesion=Pescador, numHermanos=3, edad=9, sexo=h, deporte=Fútbol
